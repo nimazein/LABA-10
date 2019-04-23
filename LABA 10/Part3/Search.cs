@@ -10,21 +10,53 @@ using System.Windows.Forms;
 
 namespace LABA_10
 {
-    public partial class Output : Form
+    public partial class Search : Form
     {
-        public Output()
+        public Search()
         {
             InitializeComponent();
         }
-        private void BTOutput_Click(object sender, EventArgs e)
+
+        private void BTTriggerSearch_Click(object sender, EventArgs e)
         {
-            TBOutput.Clear();
-            foreach (IAnimal animal in Part3.animals)
+            if (!SupportingMethods.IsStringEmpty(TBName.Text)
+                && !SupportingMethods.IsStringEmpty(TBWeight.Text))
             {
-                Identify(animal);
+                FindThisElement();
+            }
+            else
+            {
+                SupportingMethods.ShowMistake();
             }
         }
-        private void Identify(IAnimal animal)
+        private void FindThisElement()
+        {
+            string name = TBName.Text;
+            int weight = Convert.ToInt32(TBWeight.Text);
+
+            string content;
+            string header;
+
+            foreach (IAnimal animal in Part3.animals)
+            {
+                if (String.Equals(animal.Name, name))
+                {
+                    if (animal.Weight == weight)
+                    {
+                        content = "Объект найден";
+                        header = "info";
+                        MessageBox.Show(content, header, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        OutputFoundObject(animal);
+                        return;
+                    }
+                }
+               
+            }
+            content = "Элемента с такими данными нет";
+            header = "info";
+            MessageBox.Show(content, header, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        private void OutputFoundObject(IAnimal animal)
         {
             int weight = animal.Weight;
             string name = animal.Name;
@@ -45,8 +77,8 @@ namespace LABA_10
                     ShowInfo(weight, name, incubationPeriod, lifeExpectancy, hasHorns, habitat);
                     return;
 
-                }      
-                
+                }
+
                 ShowInfo(weight, name, incubationPeriod, lifeExpectancy);
                 return;
             }
@@ -58,23 +90,25 @@ namespace LABA_10
                 bool domestic = bird.Domestic;
 
                 ShowInfo(weight, name, flying, domestic);
+
+                return;
             }
 
             ShowInfo(weight, name);
         }
         private void ShowInfo(int weight, string name)
         {
-            string output = name + " "+ weight + " кг" + "\r\n";
+            string output = name + " " + weight + " кг" + "\r\n";
             TBOutput.Text += output;
         }
         private void ShowInfo(int weight, string name, int incubationPeriod, int maxAge)
         {
-            string output = name + " " + weight + " кг "+incubationPeriod +" месяцев "+ maxAge + " лет"+"\r\n";
+            string output = name + " " + weight + " кг " + incubationPeriod + " месяцев " + maxAge + " лет" + "\r\n";
             TBOutput.Text += output;
         }
         private void ShowInfo(int weight, string name, int incubationPeriod, int maxAge, bool hasHorns, string habitat)
         {
-            string output = name + " " + weight + " кг " + incubationPeriod + " месяцев " + maxAge + " лет "+"есть рога: "+" cреда обитания: "+habitat + "\r\n";
+            string output = name + " " + weight + " кг " + incubationPeriod + " месяцев " + maxAge + " лет " + "есть рога: " + " cреда обитания: " + habitat + "\r\n";
             TBOutput.Text += output;
         }
         private void ShowInfo(int weight, string name, bool flying, bool domestic)
@@ -83,21 +117,5 @@ namespace LABA_10
             TBOutput.Text += output;
         }
 
-        private void BTSort_Click(object sender, EventArgs e)
-        {
-            TBOutput.Clear();
-            string content = "Массив отсортирован";
-            string header = "info";
-            MessageBox.Show(content, header, MessageBoxButtons.OK, MessageBoxIcon.Information);
-            Array.Sort(Part3.animals);
-
-
-        }
-
-        private void ПоискЭлементаToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Search form = new Search();
-            form.ShowDialog();
-        }
     }
 }

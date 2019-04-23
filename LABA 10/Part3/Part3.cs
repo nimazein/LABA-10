@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace LABA_10
 {
@@ -100,20 +101,20 @@ namespace LABA_10
         }
         private void InsertMammalToArray(string name, int weight, int incubationPeriod, int lifeExpectancy)
         {
-            if (i == size)
+            Mammal mammal = new Mammal(weight, name, incubationPeriod, lifeExpectancy);
+            animals[i] = mammal;
+            
+
+            if (i+1 == size)
             {
                 string content = "Массив заполнен";
                 string header = "info";
                 MessageBox.Show(content, header, MessageBoxButtons.OK,MessageBoxIcon.Information);
                 DisableButtons();
             }
-            else
-            {
-                Mammal mammal = new Mammal(weight, name, incubationPeriod, lifeExpectancy);
-                animals[i] = mammal;
-                i++;
-            }
-            
+            i++;
+
+
         }
 
         private void BTAnimalCreate_Click(object sender, EventArgs e)
@@ -133,19 +134,19 @@ namespace LABA_10
         }
         private void InsertAnimalToArray(string name, int weight)
         {
-            if (i == size)
+            Animal animal = new Animal(weight, name);
+            animals[i] = animal;
+            
+
+            if (i + 1 == size)
             {
                 string content = "Массив заполнен";
                 string header = "info";
                 MessageBox.Show(content, header, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 DisableButtons();
             }
-            else
-            {
-                Animal animal = new Animal(weight, name);
-                animals[i] = animal;
-                i++;
-            }
+            i++;
+
 
         }
 
@@ -168,19 +169,18 @@ namespace LABA_10
         }
         private void InsertBirdToArray(string name, int weight, bool flying, bool domestic)
         {
-            if (i == size)
+            Bird bird = new Bird(weight, name, flying, domestic);
+            animals[i] = bird;
+            
+
+            if (i +1 == size)
             {
                 string content = "Массив заполнен";
                 string header = "info";
                 MessageBox.Show(content, header, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 DisableButtons();
             }
-            else
-            {
-                Bird bird = new Bird(weight, name, flying, domestic);
-                animals[i] = bird;
-                i++;
-            }
+            i++;
         }
 
         private void BTArtiodactylCreate_Click(object sender, EventArgs e)
@@ -207,25 +207,68 @@ namespace LABA_10
         }
         private void InsertArtiodactylToArray(string name, int weight, int incubationPeriod, int lifeExpectancy, bool hasHorns, string habitat)
         {
-            if (i == size)
+            Artiodactyl artiodactyl = new Artiodactyl(weight, name, incubationPeriod, lifeExpectancy, hasHorns, habitat);
+            animals[i] = artiodactyl;           
+
+            if (i + 1 == size)
             {
-                string content = "Массив заполнен";
-                string header = "info";
-                MessageBox.Show(content, header, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                DisableButtons();
+                //string content = "Массив заполнен";
+                //string header = "info";
+                //MessageBox.Show(content, header, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //DisableButtons();
             }
-            else
-            {
-                Artiodactyl artiodactyl = new Artiodactyl(weight, name, incubationPeriod, lifeExpectancy, hasHorns, habitat);
-                animals[i] = artiodactyl;
-                i++;
-            }
+            i++;
         }
 
         private void ВывестиМассивToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Output form = new Output();
             form.ShowDialog();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            StreamReader reader = new StreamReader("input.txt");
+
+            string line;
+            while (!reader.EndOfStream)
+            {
+                line = reader.ReadLine();
+
+                string[] delimiterChars = { " ", "\r\n" };
+                string[] parameters = line.Split(delimiterChars, StringSplitOptions.RemoveEmptyEntries);
+
+                string name = parameters[0];
+                int weight = Convert.ToInt32(parameters[1]);
+
+                if (parameters.Length == 2)
+                {
+                    InsertAnimalToArray(name, weight);
+                    continue;
+                }
+
+                if (parameters.Length == 5)
+                {//birds
+
+                }
+
+                int incubationPeriod = Convert.ToInt32(parameters[2]);
+                int lifeExpectancy = Convert.ToInt32(parameters[3]);
+
+                if (parameters.Length == 4)
+                {
+                    InsertMammalToArray(name, weight, incubationPeriod, lifeExpectancy);
+                    continue;
+                }
+                if (parameters.Length == 6)
+                {
+                    bool hasHorns = Convert.ToBoolean(parameters[4]);
+                    string habitat = parameters[5];
+
+                    InsertArtiodactylToArray(name, weight, incubationPeriod, lifeExpectancy, hasHorns, habitat);
+                    continue;
+                }
+            }
         }
     }
 }
