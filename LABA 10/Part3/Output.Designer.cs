@@ -36,6 +36,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.действияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.поискЭлементаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.BTClone = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -61,11 +62,12 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.BTClone);
             this.groupBox2.Controls.Add(this.BTSort);
             this.groupBox2.Controls.Add(this.BTOutput);
             this.groupBox2.Location = new System.Drawing.Point(304, 31);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(219, 256);
+            this.groupBox2.Size = new System.Drawing.Size(213, 407);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Действия с массивом";
@@ -117,6 +119,17 @@
             this.поискЭлементаToolStripMenuItem.Text = "Поиск элемента";
             this.поискЭлементаToolStripMenuItem.Click += new System.EventHandler(this.ПоискЭлементаToolStripMenuItem_Click);
             // 
+            // BTClone
+            // 
+            this.BTClone.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F);
+            this.BTClone.Location = new System.Drawing.Point(6, 115);
+            this.BTClone.Name = "BTClone";
+            this.BTClone.Size = new System.Drawing.Size(136, 42);
+            this.BTClone.TabIndex = 2;
+            this.BTClone.Text = "Клонировать";
+            this.BTClone.UseVisualStyleBackColor = true;
+            this.BTClone.Click += new System.EventHandler(this.BTClone_Click);
+            // 
             // Output
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -147,5 +160,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem действияToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem поискЭлементаToolStripMenuItem;
+        private System.Windows.Forms.Button BTClone;
     }
 }
