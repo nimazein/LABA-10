@@ -31,12 +31,12 @@
             this.TBOutput = new System.Windows.Forms.RichTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.BTClone = new System.Windows.Forms.Button();
             this.BTSort = new System.Windows.Forms.Button();
             this.BTOutput = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.действияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.поискЭлементаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.BTClone = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -44,9 +44,9 @@
             // 
             // TBOutput
             // 
-            this.TBOutput.Location = new System.Drawing.Point(6, 19);
+            this.TBOutput.Location = new System.Drawing.Point(10, 15);
             this.TBOutput.Name = "TBOutput";
-            this.TBOutput.Size = new System.Drawing.Size(256, 401);
+            this.TBOutput.Size = new System.Drawing.Size(517, 292);
             this.TBOutput.TabIndex = 0;
             this.TBOutput.Text = "";
             // 
@@ -55,7 +55,7 @@
             this.groupBox1.Controls.Add(this.TBOutput);
             this.groupBox1.Location = new System.Drawing.Point(12, 31);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(272, 407);
+            this.groupBox1.Size = new System.Drawing.Size(533, 313);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Элементы массива";
@@ -65,12 +65,23 @@
             this.groupBox2.Controls.Add(this.BTClone);
             this.groupBox2.Controls.Add(this.BTSort);
             this.groupBox2.Controls.Add(this.BTOutput);
-            this.groupBox2.Location = new System.Drawing.Point(304, 31);
+            this.groupBox2.Location = new System.Drawing.Point(551, 27);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(213, 407);
+            this.groupBox2.Size = new System.Drawing.Size(149, 167);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Действия с массивом";
+            // 
+            // BTClone
+            // 
+            this.BTClone.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F);
+            this.BTClone.Location = new System.Drawing.Point(6, 115);
+            this.BTClone.Name = "BTClone";
+            this.BTClone.Size = new System.Drawing.Size(136, 42);
+            this.BTClone.TabIndex = 2;
+            this.BTClone.Text = "Клонировать";
+            this.BTClone.UseVisualStyleBackColor = true;
+            this.BTClone.Click += new System.EventHandler(this.BTClone_Click);
             // 
             // BTSort
             // 
@@ -115,31 +126,21 @@
             // поискЭлементаToolStripMenuItem
             // 
             this.поискЭлементаToolStripMenuItem.Name = "поискЭлементаToolStripMenuItem";
-            this.поискЭлементаToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.поискЭлементаToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.поискЭлементаToolStripMenuItem.Text = "Поиск элемента";
             this.поискЭлементаToolStripMenuItem.Click += new System.EventHandler(this.ПоискЭлементаToolStripMenuItem_Click);
-            // 
-            // BTClone
-            // 
-            this.BTClone.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F);
-            this.BTClone.Location = new System.Drawing.Point(6, 115);
-            this.BTClone.Name = "BTClone";
-            this.BTClone.Size = new System.Drawing.Size(136, 42);
-            this.BTClone.TabIndex = 2;
-            this.BTClone.Text = "Клонировать";
-            this.BTClone.UseVisualStyleBackColor = true;
-            this.BTClone.Click += new System.EventHandler(this.BTClone_Click);
             // 
             // Output
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 382);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Output";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Output";
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);

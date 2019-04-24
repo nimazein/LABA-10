@@ -23,8 +23,6 @@ namespace LABA_10
 
         }
         List<ClassBirds> birds = new List<ClassBirds>();
-
-
         private void BTBirdCreate_Click(object sender, EventArgs e)
         {
             string name = Inputs.InputName(TBBirdName.Text);
@@ -53,6 +51,9 @@ namespace LABA_10
                     SupportingMethods.ShowMistake(content: "Вес введен неверно");
                 }
             }
+
+            TBBirdName.Clear();
+            TBBirdWeight.Clear();
         }
 
         private void кЖивотнымToolStripMenuItem_Click(object sender, EventArgs e)

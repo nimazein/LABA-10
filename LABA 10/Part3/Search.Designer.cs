@@ -51,7 +51,7 @@
             this.groupBox1.Controls.Add(this.TBName);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(396, 157);
+            this.groupBox1.Size = new System.Drawing.Size(396, 130);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ввод данных";
@@ -94,6 +94,7 @@
             this.TBWeight.Name = "TBWeight";
             this.TBWeight.Size = new System.Drawing.Size(112, 27);
             this.TBWeight.TabIndex = 2;
+            this.TBWeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBWeight_KeyPress);
             // 
             // label1
             // 
@@ -112,13 +113,14 @@
             this.TBName.Name = "TBName";
             this.TBName.Size = new System.Drawing.Size(287, 27);
             this.TBName.TabIndex = 0;
+            this.TBName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBName_KeyPress);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.TBOutput);
-            this.groupBox2.Location = new System.Drawing.Point(12, 175);
+            this.groupBox2.Location = new System.Drawing.Point(12, 148);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(396, 198);
+            this.groupBox2.Size = new System.Drawing.Size(396, 225);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Найденный элемент";
@@ -128,7 +130,7 @@
             this.TBOutput.Location = new System.Drawing.Point(10, 20);
             this.TBOutput.Name = "TBOutput";
             this.TBOutput.ReadOnly = true;
-            this.TBOutput.Size = new System.Drawing.Size(370, 172);
+            this.TBOutput.Size = new System.Drawing.Size(370, 199);
             this.TBOutput.TabIndex = 0;
             this.TBOutput.Text = "";
             // 
@@ -136,10 +138,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(676, 385);
+            this.ClientSize = new System.Drawing.Size(418, 385);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Search";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Search";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

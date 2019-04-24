@@ -75,7 +75,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.действияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.вывестиМассивToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -129,6 +128,7 @@
             this.TBMammalIncubationPeriod.Name = "TBMammalIncubationPeriod";
             this.TBMammalIncubationPeriod.Size = new System.Drawing.Size(56, 27);
             this.TBMammalIncubationPeriod.TabIndex = 7;
+            this.TBMammalIncubationPeriod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBMammalIncubationPeriod_KeyPress);
             // 
             // TBMammalMaxAge
             // 
@@ -137,6 +137,7 @@
             this.TBMammalMaxAge.Name = "TBMammalMaxAge";
             this.TBMammalMaxAge.Size = new System.Drawing.Size(56, 27);
             this.TBMammalMaxAge.TabIndex = 6;
+            this.TBMammalMaxAge.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBMammalMaxAge_KeyPress);
             // 
             // BTMammalCreate
             // 
@@ -166,6 +167,7 @@
             this.TBMammalWeight.Name = "TBMammalWeight";
             this.TBMammalWeight.Size = new System.Drawing.Size(116, 27);
             this.TBMammalWeight.TabIndex = 2;
+            this.TBMammalWeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBMammalWeight_KeyPress);
             // 
             // label17
             // 
@@ -184,6 +186,7 @@
             this.TBMammalName.Name = "TBMammalName";
             this.TBMammalName.Size = new System.Drawing.Size(335, 27);
             this.TBMammalName.TabIndex = 0;
+            this.TBMammalName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBMammalName_KeyPress);
             // 
             // groupBox3
             // 
@@ -269,6 +272,7 @@
             this.TBBirdWeight.Name = "TBBirdWeight";
             this.TBBirdWeight.Size = new System.Drawing.Size(111, 27);
             this.TBBirdWeight.TabIndex = 2;
+            this.TBBirdWeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBBirdWeight_KeyPress);
             // 
             // label13
             // 
@@ -287,6 +291,7 @@
             this.TBBirdName.Name = "TBBirdName";
             this.TBBirdName.Size = new System.Drawing.Size(312, 27);
             this.TBBirdName.TabIndex = 0;
+            this.TBBirdName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBBirdName_KeyPress);
             // 
             // groupBox2
             // 
@@ -346,6 +351,7 @@
             this.TBArtiodactylHabitat.Name = "TBArtiodactylHabitat";
             this.TBArtiodactylHabitat.Size = new System.Drawing.Size(286, 27);
             this.TBArtiodactylHabitat.TabIndex = 10;
+            this.TBArtiodactylHabitat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBArtiodactylHabitat_KeyPress);
             // 
             // label4
             // 
@@ -374,6 +380,7 @@
             this.TBArtiodactylIncubationPeriod.Name = "TBArtiodactylIncubationPeriod";
             this.TBArtiodactylIncubationPeriod.Size = new System.Drawing.Size(56, 27);
             this.TBArtiodactylIncubationPeriod.TabIndex = 7;
+            this.TBArtiodactylIncubationPeriod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBArtiodactylIncubationPeriod_KeyPress);
             // 
             // TBArtiodactylMaxAge
             // 
@@ -382,6 +389,7 @@
             this.TBArtiodactylMaxAge.Name = "TBArtiodactylMaxAge";
             this.TBArtiodactylMaxAge.Size = new System.Drawing.Size(56, 27);
             this.TBArtiodactylMaxAge.TabIndex = 6;
+            this.TBArtiodactylMaxAge.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBArtiodactylMaxAge_KeyPress);
             // 
             // BTArtiodactylCreate
             // 
@@ -411,6 +419,7 @@
             this.TBArtiodactylWeight.Name = "TBArtiodactylWeight";
             this.TBArtiodactylWeight.Size = new System.Drawing.Size(116, 27);
             this.TBArtiodactylWeight.TabIndex = 2;
+            this.TBArtiodactylWeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBArtiodactylWeight_KeyPress);
             // 
             // label9
             // 
@@ -429,6 +438,7 @@
             this.TBArtiodactylName.Name = "TBArtiodactylName";
             this.TBArtiodactylName.Size = new System.Drawing.Size(335, 27);
             this.TBArtiodactylName.TabIndex = 0;
+            this.TBArtiodactylName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBArtiodactylName_KeyPress);
             // 
             // groupBox1
             // 
@@ -483,6 +493,7 @@
             this.TBAnimalWeight.Name = "TBAnimalWeight";
             this.TBAnimalWeight.Size = new System.Drawing.Size(112, 27);
             this.TBAnimalWeight.TabIndex = 2;
+            this.TBAnimalWeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBAnimalWeight_KeyPress);
             // 
             // label1
             // 
@@ -501,6 +512,7 @@
             this.TBAnimalName.Name = "TBAnimalName";
             this.TBAnimalName.Size = new System.Drawing.Size(287, 27);
             this.TBAnimalName.TabIndex = 0;
+            this.TBAnimalName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBAnimalName_KeyPress);
             // 
             // groupBox5
             // 
@@ -531,6 +543,7 @@
             this.TBInputSize.Name = "TBInputSize";
             this.TBInputSize.Size = new System.Drawing.Size(116, 27);
             this.TBInputSize.TabIndex = 12;
+            this.TBInputSize.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBInputSize_KeyPress);
             // 
             // menuStrip1
             // 
@@ -554,25 +567,14 @@
             // 
             this.вывестиМассивToolStripMenuItem.Name = "вывестиМассивToolStripMenuItem";
             this.вывестиМассивToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.вывестиМассивToolStripMenuItem.Text = "Вывести массив";
+            this.вывестиМассивToolStripMenuItem.Text = "Вывод массива";
             this.вывестиМассивToolStripMenuItem.Click += new System.EventHandler(this.ВывестиМассивToolStripMenuItem_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(324, 41);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "skip";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // Part3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(981, 523);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -581,6 +583,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Part3";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Part3";
             this.Load += new System.EventHandler(this.Part3_Load);
             this.groupBox4.ResumeLayout(false);
@@ -649,6 +652,5 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem действияToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem вывестиМассивToolStripMenuItem;
-        private System.Windows.Forms.Button button1;
     }
 }

@@ -19,7 +19,7 @@ namespace LABA_10
         }
         public static IAnimal[] animals;
         public static int size;
-        int i;
+        public static int i;
         private void BTInputSize_Click(object sender, EventArgs e)
         {
             if (SupportingMethods.IsStringEmpty(TBInputSize.Text))
@@ -92,12 +92,17 @@ namespace LABA_10
                 int incubationPeriod = Convert.ToInt32(TBMammalIncubationPeriod.Text);
                 int lifeExpectancy = Convert.ToInt32(TBMammalMaxAge.Text);
 
-                InsertMammalToArray(name, weight, incubationPeriod, lifeExpectancy);
+                InsertMammalToArray(name, weight, incubationPeriod, lifeExpectancy);              
             }
             else
             {
                 SupportingMethods.ShowMistake();
             }
+
+            TBMammalWeight.Clear();
+            TBMammalName.Clear();
+            TBMammalMaxAge.Clear();
+            TBMammalIncubationPeriod.Clear();
         }
         private void InsertMammalToArray(string name, int weight, int incubationPeriod, int lifeExpectancy)
         {
@@ -131,6 +136,9 @@ namespace LABA_10
             {
                 SupportingMethods.ShowMistake();
             }
+
+            TBAnimalName.Clear();
+            TBAnimalWeight.Clear();
         }
         private void InsertAnimalToArray(string name, int weight)
         {
@@ -166,6 +174,10 @@ namespace LABA_10
             {
                 SupportingMethods.ShowMistake();
             }
+
+            TBBirdWeight.Clear();
+            TBBirdName.Clear();
+
         }
         private void InsertBirdToArray(string name, int weight, bool flying, bool domestic)
         {
@@ -204,6 +216,12 @@ namespace LABA_10
             {
                 SupportingMethods.ShowMistake();
             }
+
+            TBArtiodactylHabitat.Clear();
+            TBArtiodactylIncubationPeriod.Clear();
+            TBArtiodactylMaxAge.Clear();
+            TBArtiodactylName.Clear();
+            TBArtiodactylWeight.Clear();
         }
         private void InsertArtiodactylToArray(string name, int weight, int incubationPeriod, int lifeExpectancy, bool hasHorns, string habitat)
         {
@@ -212,10 +230,10 @@ namespace LABA_10
 
             if (i + 1 == size)
             {
-                //string content = "Массив заполнен";
-                //string header = "info";
-                //MessageBox.Show(content, header, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //DisableButtons();
+                string content = "Массив заполнен";
+                string header = "info";
+                MessageBox.Show(content, header, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DisableButtons();
             }
             i++;
         }
@@ -268,6 +286,132 @@ namespace LABA_10
                     InsertArtiodactylToArray(name, weight, incubationPeriod, lifeExpectancy, hasHorns, habitat);
                     continue;
                 }
+            }
+        }
+
+        private void TBMammalName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char s = e.KeyChar;
+            if ((s > 'я' || s < 'А') && s != 8 && s != 32)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TBAnimalName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char s = e.KeyChar;
+            if ((s > 'я' || s < 'А') && s != 8 && s != 32)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TBArtiodactylHabitat_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char s = e.KeyChar;
+            if ((s > 'я' || s < 'А') && s != 8 && s != 32)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TBBirdName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char s = e.KeyChar;
+            if ((s > 'я' || s < 'А') && s != 8 && s != 32)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TBMammalWeight_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char s = e.KeyChar;
+            if (!Char.IsDigit(s) && s != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TBMammalIncubationPeriod_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char s = e.KeyChar;
+            if (!Char.IsDigit(s) && s != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TBMammalMaxAge_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char s = e.KeyChar;
+            if (!Char.IsDigit(s) && s != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TBBirdWeight_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char s = e.KeyChar;
+            if (!Char.IsDigit(s) && s != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TBAnimalWeight_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char s = e.KeyChar;
+            if (!Char.IsDigit(s) && s != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TBArtiodactylWeight_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char s = e.KeyChar;
+            if (!Char.IsDigit(s) && s != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TBArtiodactylIncubationPeriod_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char s = e.KeyChar;
+            if (!Char.IsDigit(s) && s != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TBArtiodactylMaxAge_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char s = e.KeyChar;
+            if (!Char.IsDigit(s) && s != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TBArtiodactylName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char s = e.KeyChar;
+            if ((s > 'я' || s < 'А') && s != 8 && s != 32)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TBInputSize_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char s = e.KeyChar;
+            if (!Char.IsDigit(s) && s != 8)
+            {
+                e.Handled = true;
             }
         }
     }

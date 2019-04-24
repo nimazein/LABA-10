@@ -68,6 +68,13 @@ namespace LABA_10
                     SupportingMethods.ShowMistake(content: "Вес введен неверно");
                 }
             }
+            TBArtiodactylHabitat.Clear();
+            TBArtiodactylIncubationPeriod.Clear();
+            TBArtiodactylMaxAge.Clear();
+            TBArtiodactylName.Clear();
+            TBArtiodactylWeight.Clear();
+            
+
         }
 
         private void КМлекопитающимToolStripMenuItem_Click(object sender, EventArgs e)

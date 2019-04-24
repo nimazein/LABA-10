@@ -93,7 +93,6 @@ namespace LABA_10
 
                 return;
             }
-
             ShowInfo(weight, name);
         }
         private void ShowInfo(int weight, string name)
@@ -117,5 +116,22 @@ namespace LABA_10
             TBOutput.Text += output;
         }
 
+        private void TBWeight_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char s = e.KeyChar;
+            if (!Char.IsDigit(s) && s != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TBName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char s = e.KeyChar;
+            if ((s > 'я' || s < 'А') && s != 8 && s != 32)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

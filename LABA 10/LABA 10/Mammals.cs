@@ -48,6 +48,11 @@ namespace LABA_10
                     SupportingMethods.ShowMistake(content: "Вес введен неверно");
                 }
             }
+
+            TBIncubationPeriod.Clear();
+            TBMammalName.Clear();
+            TBMammalWeight.Clear();
+            TBMaxAge.Clear();
         }
 
         private void кЖивотнымToolStripMenuItem_Click(object sender, EventArgs e)
@@ -136,8 +141,18 @@ namespace LABA_10
         private void КЧасти2ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Part2 form = new Part2();
-            form.ShowDialog();
-            Close();
+            DialogResult res = form.ShowDialog();
+            if (res == DialogResult.Cancel)
+            {
+                res = MessageBox.Show("Закрыть приложение?", "", MessageBoxButtons.OKCancel);
+                if (res == DialogResult.OK)
+                    Close();
+            }
+            _Forms(this, null);
+        }
+        public static void _Forms(Form _from, Form _to)
+        {
+
         }
     }
 }

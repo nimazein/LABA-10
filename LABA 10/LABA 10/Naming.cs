@@ -15,7 +15,6 @@ namespace LABA_10
             {
                 return name;
             }
-
             set
             {
                 name = value;
@@ -25,6 +24,5 @@ namespace LABA_10
         {
             Name = name;
         }
-
     }
 }

@@ -41,9 +41,9 @@
             this.кМлекопитающимToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.кПтицамToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.кПарнокопытнымToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.кЧасти2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.кЧасти2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -175,6 +175,13 @@
             this.кПарнокопытнымToolStripMenuItem.Text = "К парнокопытным";
             this.кПарнокопытнымToolStripMenuItem.Click += new System.EventHandler(this.кПарнокопытнымToolStripMenuItem_Click);
             // 
+            // кЧасти2ToolStripMenuItem
+            // 
+            this.кЧасти2ToolStripMenuItem.Name = "кЧасти2ToolStripMenuItem";
+            this.кЧасти2ToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.кЧасти2ToolStripMenuItem.Text = "К части 2";
+            this.кЧасти2ToolStripMenuItem.Click += new System.EventHandler(this.КЧасти2ToolStripMenuItem_Click);
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.richTextBox1);
@@ -193,13 +200,6 @@
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
-            // кЧасти2ToolStripMenuItem
-            // 
-            this.кЧасти2ToolStripMenuItem.Name = "кЧасти2ToolStripMenuItem";
-            this.кЧасти2ToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.кЧасти2ToolStripMenuItem.Text = "К части 2";
-            this.кЧасти2ToolStripMenuItem.Click += new System.EventHandler(this.КЧасти2ToolStripMenuItem_Click);
-            // 
             // Animals
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -210,6 +210,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Animals";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Animals";
             this.Load += new System.EventHandler(this.Animals_Load);
             this.groupBox1.ResumeLayout(false);

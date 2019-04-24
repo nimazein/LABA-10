@@ -31,7 +31,7 @@ namespace LABA_10
         }
 
         private void BTAnimalCreate_Click(object sender, EventArgs e)
-        {
+        {          
             string name = Inputs.InputName(TBAnimalName.Text);
             if (name != null)
             {
@@ -43,6 +43,8 @@ namespace LABA_10
                     animals.Add(animal);
                 }
             }
+            TBAnimalName.Clear();
+            TBAnimalWeight.Clear();
         }
         private void TBAnimalWeight_TextChanged(object sender, EventArgs e)
         {

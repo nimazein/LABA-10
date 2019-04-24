@@ -15,17 +15,29 @@ namespace LABA_10
         int numberOfObjectsWithThisType;
         private void BTCountWeight_Click(object sender, EventArgs e)
         {
+            if (SupportingMethods.zoo.Count == 0)
+            {
+                SupportingMethods.ShowMistake(content: "Массив пуст");
+                return;
+            }
             sumWeight = 0;
             numberOfObjectsWithThisType = 0;
             TBOutputWeight.Clear();
             selectedItem = comboBox1.SelectedIndex;
 
             CountSumWeight();
+            if (numberOfObjectsWithThisType == 0)
+            {
+                SupportingMethods.ShowMistake(content: "Объектов такого типа в массиве нет");
+                return;
+            }
+
             CountAndOutputAverageWeight();
 
         }
         private void CountSumWeight()
         {
+            
             foreach (object animal in SupportingMethods.zoo)
             {
                 if (animal is KingdomAnimal)
@@ -98,34 +110,49 @@ namespace LABA_10
 
         private void BTShowBirds_Click(object sender, EventArgs e)
         {
+            int numberOfBirds = 0;
+
             foreach (object animal in SupportingMethods.zoo)
             {
                 FindAndOutputBirds(animal);
             }
-        }
-        private void FindAndOutputBirds(object animal)
-        {
-            if (animal is ClassBirds)
+            if (numberOfBirds == 0)
             {
-                ClassBirds bird = animal as ClassBirds;
+                string content = "Не было создано ни одной птицы";
+                string header = "info";
+                MessageBox.Show(content, header, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            void FindAndOutputBirds(object animal)
+            {
+                if (animal is ClassBirds)
+                {
+                    numberOfBirds++;
+                    ClassBirds bird = animal as ClassBirds;
 
-                string output = bird.Name + "\r\n";
-                TBOutputBirds.Text += output;
+                    string output = bird.Name + "\r\n";
+                    TBOutputBirds.Text += output;
+                }
             }
         }
+        
 
         int sumMaxAge;
         int averageMaxAge;
         private void BTCountMaxAge_Click(object sender, EventArgs e)
         {
+
             sumMaxAge = 0;
             averageMaxAge = 0;
             numberOfObjectsWithThisType = 0;
 
             CountSumMaxAge();
+
+            if (numberOfObjectsWithThisType == 0)
+            {
+                SupportingMethods.ShowMistake(content: "Не было создано ни одного животного");
+                return;
+            }
             CountAndOutputAverageMaxAge();
-
-
         }
         private void CountSumMaxAge()
         {
@@ -152,11 +179,6 @@ namespace LABA_10
         {
             averageMaxAge = sumMaxAge / numberOfObjectsWithThisType;
             TBMaxAge.Text = averageMaxAge.ToString();
-        }
-
-        private void КЧасти3ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
