@@ -45,15 +45,7 @@ namespace LABA_10
         }
         public object Clone()
         {
-            return new Bird(Weight, Name, Flying, Domestic);
-
-
-            
-
+            return new Bird(Weight, Name, Flying, Domestic);        
         }
-
-
-
-
     }
 }
